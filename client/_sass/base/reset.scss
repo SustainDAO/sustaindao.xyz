@@ -30,9 +30,18 @@ body {
     scroll-behavior: smooth;
 }
 
-
-body{
-    background-color: rgb(31,31,31);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span{
+    cursor: default;
+}
+body {
+    background-color: rgb(31, 31, 31);
 }
 
 input:-webkit-autofill,

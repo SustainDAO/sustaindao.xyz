@@ -7,8 +7,7 @@ module.exports = function(req,res){
                 Authorization:`Bearer ${process.env.TWITTER_BEARER_TOKEN}`,
             }
         }
-        
-        axios.get("https://api.twitter.com/2/users/1504551646608728064/tweets?max_results=5&tweet.fields=created_at,text,public_metrics", options)
+        axios.get("https://api.twitter.com/2/users/1504551646608728064/tweets?max_results=5&tweet.fields=created_at,text", options)
         .then(response => {
             return res.json(response.data.data)
         }).catch(error => {

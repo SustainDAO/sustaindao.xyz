@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const axios = require('axios');
 require("dotenv").config();
 const app = express();
 app.use(cors());
@@ -27,40 +26,6 @@ app.get("/", (req, res) => {
     }
   });
 });
-
-app.get("/api/twitter/sustaindao", async (req, res) => {
-  const options = {
-    headers: {
-      Authorization: `Bearer ${process.env.TWITTER_BEARER_TOKEN}`,
-    },
-  };
-  axios
-    .get(
-      "https://api.twitter.com/2/users/1504551646608728064?user.fields=name,username,profile_image_url",
-      options
-    )
-    .then((response) => {
-      return res.json(response.data.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    }); 
-});
-
-app.get('/api/tweets', async (req,res) => {
-  const options = {
-      headers:{
-        Authorization:`Bearer ${process.env.TWITTER_BEARER_TOKEN}`,
-      }
-    }
-
-    axios.get("https://api.twitter.com/2/users/1504551646608728064/tweets?max_results=5&tweet.fields=created_at,text,public_metrics", options)
-    .then(response => {
-        return res.json(response.data.data)
-    }).catch(error => {
-        console.log(error)
-    })
-})
 
 app.listen(PORT);
 

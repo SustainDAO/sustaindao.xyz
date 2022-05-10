@@ -39,6 +39,7 @@ module.exports = {
       '75': '18.75rem',
       '84': '21rem',
       '98': '24.5rem',
+      '100':'28rem',
       'fit': 'fit-content',
     },
     minHeight: {

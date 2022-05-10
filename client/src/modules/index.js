@@ -149,16 +149,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let obj = document.querySelector('.img-object')
     window.onscroll = () => {
-      var svg = obj.contentDocument.querySelector("svg");
+      let svg = obj.contentDocument?.querySelector("svg");
       let theta = window.scrollY / 4;
-      svg.querySelectorAll('g').forEach(group => {
-        let paths = group.querySelectorAll('path');
-        paths.forEach(path => {
-          path.style.transformOrigin = 'center';
-          path.style.transformBox = 'fill-box'
-          path.style.transition='0.5s ease'
-          path.style.transform = `rotate(${theta}deg)`
+      if(svg){
+        svg.querySelectorAll('g').forEach(group => {
+          let paths = group.querySelectorAll('path');
+          paths.forEach(path => {
+            path.style.transformOrigin = 'center';
+            path.style.transformBox = 'fill-box'
+            path.style.transition='0.5s ease'
+            path.style.transform = `rotate(${theta}deg)`
+          })
         })
-      })
+      }
     }
   });

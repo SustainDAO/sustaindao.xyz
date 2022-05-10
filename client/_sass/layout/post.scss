@@ -5,6 +5,7 @@
 }
 
 .post-content {
+  cursor: pointer;
   &::before {
     border-radius: 40px;
   }

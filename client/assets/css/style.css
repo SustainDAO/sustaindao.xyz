@@ -622,9 +622,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .min-h-24 {
   min-height: 6rem;
 }
-.min-h-90 {
-  min-height: 23rem;
-}
 .w-full {
   width: 100%;
 }
@@ -1067,6 +1064,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: none;
   }
 
+  .sm\:w-4\/5 {
+    width: 80%;
+  }
+
   .sm\:max-w-xsl {
     max-width: 22.5rem;
   }
@@ -1112,6 +1113,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .tablet\:mt-20 {
     margin-top: 5rem;
+  }
+
+  .tablet\:w-auto {
+    width: auto;
+  }
+
+  .tablet\:min-w-98 {
+    min-width: 24.5rem;
+  }
+
+  .tablet\:min-w-100 {
+    min-width: 28rem;
   }
 
   .tablet\:max-w-lmd {
