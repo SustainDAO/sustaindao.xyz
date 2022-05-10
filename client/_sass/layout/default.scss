@@ -1,0 +1,197 @@
+@import "../mixins/gradient-border.scss";
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+@-webkit-keyframes rotatingCounterClockWise {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes slide-left {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    margin-left: -60%;
+  }
+  50% {
+    margin-left: -40%;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+#learn-more {
+  background-image: linear-gradient(to right, #abe581, #8cdbe2, #c0f898, #85f5ff);
+  background-size: 300% 100%;
+  transition: all 0.7s ease-in-out;
+  &:hover {
+    background-position: 100% 0;
+    transform: scale(1.05);
+    transition: all 0.7s ease-in-out;
+  }
+}
+
+.join-us {
+  box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1);
+  border: 1px solid #464646;
+}
+
+.question {
+  padding: 11px 16px;
+  background: #323232;
+  box-shadow: 0px 2px 4px -2px rgba(24, 39, 75, 0.12), 0px 4px 4px -2px rgba(24, 39, 75, 0.08);
+  transition: all 0.4s ease;
+  &:hover {
+    background: #404040;
+  }
+  &::after {
+    content: "\276F";
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    transition: all 0.4s ease;
+  }
+  &.active {
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.answer {
+  p:first-child {
+    border-top: 1px solid #f2f2f5;
+    padding-top: 1rem;
+  }
+  p:nth-child(2) {
+    margin-top: 1rem;
+  }
+}
+
+#roadmap {
+  margin: 1.5rem 17rem 6rem;
+  .ps-timeline {
+    border-top: 3px solid;
+    border-image-slice: 1;
+    border-right: none;
+    border-bottom: none;
+    border-image-source: radial-gradient(#abe581, #8ce5cc);
+
+    &::after {
+      top: -10px;
+      right: -230px;
+      content: "Community governance to drive bitcoin sustainability and global adoption!";
+      position: absolute;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 26px;
+      max-width: 212px;
+    }
+    div:last-child {
+      right: -16px;
+      top: -6px;
+      background-color: #8ce5cc;
+      clip-path: polygon(0 0, 0 100%, 69% 49%);
+    }
+    & > li {
+      &::marker {
+        content: none;
+      }
+
+      div:first-of-type {
+        transition: 0.4s ease;
+      }
+
+      span {
+        &::before {
+          content: "";
+          width: 3px;
+          height: 50px;
+          background: radial-gradient(50% 190.67% at 50% -54.1%, #abe581 0%, #8ce5cc 100%);
+          position: absolute;
+          bottom: -50px;
+          left: 50%;
+        }
+        &::after {
+          content: "";
+          color: #8ce5cc;
+          width: 25px;
+          height: 25px;
+          background: #8ce5cc;
+          position: absolute;
+          top: 48px;
+          right: -14px;
+          border-radius: 100%;
+        }
+      }
+    }
+  }
+}
+
+.coin-stats {
+  .wrapper {
+    align-items: self-start;
+    @media screen and (min-width: 1780px) {
+      align-items: center;
+    }
+  }
+  .content {
+    border-radius: 40px;
+    @include graidentBorder(#2b2b2b);
+  }
+  .btc-animation {
+    margin-left: 100%;
+    img {
+      animation: rotating 2.5s linear infinite;
+    }
+  }
+}
+
+.community-stats {
+  .wrapper {
+    align-items: self-end;
+    @media screen and (min-width: 1780px) {
+      align-items: center;
+    }
+  }
+  .content {
+    border-radius: 40px;
+    @include graidentBorder(#2b2b2b);
+  }
+}
+
+.group {
+  transform-box: fill-box !important;
+  transform-origin: center !important;
+}
+
+:not(svg){
+  transform-box: fill-box !important;
+  transform-origin: center !important;
+}

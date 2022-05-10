@@ -1,0 +1,149 @@
+---
+layout: articles
+title: Articles
+pagination:
+enabled: true
+---
+
+<section class="articles mt-36">
+    <h3 class="text-center text-white text-4xl tablet:text-5xl font-display-bold">Articles</h3>
+    <div class="flex justify-center px-5 tablet:px-10 desktop:px-24 py-16 flex-col">
+        <div class="grid grid-cols-1 laptop:grid-cols-2 screen-xl:grid-cols-3 gap-12 articles-grid">
+            {%- for post in paginator.posts -%}
+            <div class="post-content max-h-64 flex justify-start">
+                <a href="{{post.url}}">
+                    <div class="p-6 desktop:p-10 text-white">
+                        <p
+                            class="text-sm font-semibold leading-5 tablet:text-base desktop:text-2xl tablet:leading-8 mb-4 tablet:mb-0 desktop:mb-8">
+                            {{post.date | date: "%B %e, %Y"}}</p>
+                        <h1
+                            class="text-2xl font-bold font-display-bold leading-9 tablet:text-4xl desktop:text-4.5xl tablet:leading-12">
+                            {{ post.title | strip_html |
+                            truncate: 20 }}</h1>
+                        <article
+                            class="mt-6 text-sm leading-5 tablet:text-base desktop:text-2xl tracking-wide tablet:leading-7 line-clamp-5">
+                            {{ post.excerpt | strip_html | truncate: 240}}</article>
+                    </div>
+                </a>
+            </div>
+            {%- endfor -%}
+        </div>
+        <div class="pagination flex items-center justify-center text-white mt-10 tablet:mt-20">
+
+            {% assign paginator_title = 'Pagination' %}
+            {% if page.paginate.title_label %}
+            {% assign paginator_title = page.paginate.title_label %}
+            {% endif %}
+
+            {% assign page_amount = 7 %}
+            {% if page.paginate.page_amount %}
+            {% assign page_amount = page.paginate.page_amount %}
+            {% endif %}
+
+            {% assign page_amountmin = page_amount | minus: 2 %}
+            {% assign offset = page_amountmin | divided_by: 2 %}
+            {% assign page_amountprev = paginator.page | minus: offset %}
+            {% assign page_amountnext = paginator.page | plus: offset %}
+            {% assign totalpages = paginator.total_pages %}
+
+            {% if page_amountprev <= 1 %} {% assign page_amountprevfix=page_amountprev | minus: 1 %} {% assign
+                page_amountprev=0 %} {% assign page_amountnext=page_amountnext | minus: page_amountprevfix | plus: 1 %}
+                {% endif %} {% if page_amountnext>= totalpages %}
+                {% assign page_amountnextfix = totalpages | minus: page_amountnext | minus: 1 %}
+                {% assign page_amountnext = totalpages %}
+                {% assign page_amountprev = page_amountprev | plus: page_amountnextfix %}
+                {% endif %}
+
+                {% assign dots_prev = page_amountprev | minus: 1 %}
+                {% assign dots_next = totalpages | minus: 1 %}
+                {% assign max_next = totalpages | minus: offset | minus: 1 %}
+
+                {% if totalpages > page_amount %}
+                {% for count in (2..paginator.total_pages) %}
+                {% if count == dots_prev %}
+                {% assign indicator_first = ' pages-indicator--active' %}
+                {% endif %}
+                {% if count == dots_next and paginator.page < max_next %} {% assign
+                    indicator_last=' pages-indicator--active' %} {% endif %} {% if forloop.first %} {% assign
+                    relative_first=paginator.page | minus: forloop.index | divided_by: 1 %} {% endif %} {% if
+                    forloop.last %} {% assign relative_last=paginator.page | minus: forloop.index | replace: '-' , '' |
+                    divided_by: 1 | plus: 1 %} {% endif %} {% endfor %} {% endif %} <ul
+                    class="pagination flex gap-5 items-center font-extrabold" role="navigation"
+                    aria-labelledby="pagination-label">
+
+                    {% if paginator.previous_page %}
+                    <li>
+                        <a class="previous w-16 h-16 rounded-full flex justify-center border border-gray items-center relative"
+                            href="{{ paginator.previous_page_path }}" rel="prev"></a>
+                    </li>
+                    {% else %}
+                    <span
+                        class="previous w-16 h-16 rounded-full flex justify-center border border-gray items-center relative text-gray"></span>
+                    {% endif %}
+
+                    {% unless paginator.page == 1 %}
+                    <li class="page first">
+                        <a class="pagination-item" href="{{ page.paginate.root | append: '/articles' }}">1</a>
+                    </li>
+                    {% if totalpages > 4 %}
+                    <li class="pages-indicator{{ indicator_first }} pages-indicator--offset-{{ relative_first }}">
+                        <span aria-hidden="true">...</span><span class="sr-only">Skipped pages indicator</span>
+                    </li>
+                    {% endif %}
+                    {% else %}
+                    <li class="page first page-active">
+                        <span class="pagination-item"><span class="sr-only">current page</span><span
+                                aria-hidden="true">1</span></span>
+                    </li>
+                    {% endunless %}
+
+                    {% for count in (2..paginator.total_pages) %}
+                    {% if count >= page_amountprev and count <= page_amountnext %} {% assign
+                        relative_to_current=paginator.page | minus: count | replace: '-' , '' | divided_by: 1 %} {%
+                        unless count==totalpages %} <li
+                        class="page offset-{{relative_to_current}}{% if count == paginator.page %} page-active{% endif %}">
+                        {% if count == paginator.page %}
+                        <span class="pagination-item"><span class="sr-only">current page</span><span
+                                aria-hidden="true">{{ count }}</span></span>
+                        {% else %}
+                        <a class="pagination-item"
+                            href="{{ page.paginate.root | append: '/articles/page/' | append: count  }}"><span
+                                class="sr-only">page </span>{{ count }}</a>
+                        {% endif %}
+                        </li>
+                        {% endunless %}
+                        {% endif %}
+                        {% endfor %}
+
+                        {% if paginator.page != totalpages %}
+                        {% if totalpages > 4 %}
+                        <li class="pages-indicator{{ indicator_last }} pages-indicator--offset-{{ relative_last }}">
+                            <span aria-hidden="true">...</span><span class="sr-only">Skipped pages indicator</span>
+                        </li>
+                        {% endif %}
+                        <li class="page last">
+                            <a class="pagination-item"
+                                href="{{ page.paginate.root | append: '/articles/page/' | append: totalpages }}"><span
+                                    class="sr-only">page </span>{{ totalpages }}</a>
+                        </li>
+                        {% else %}
+                        <li class="page {% if totalpages == paginator.page %} page-active{% endif %}">
+                            <span class="pagination-item"><span class="sr-only">current page</span><span
+                                    aria-hidden="true">{{ totalpages }}</span></span>
+                        </li>
+                        {% endif %}
+
+                        {% if paginator.next_page %}
+                        <li>
+                            <a class="next w-16 h-16 rounded-full flex justify-center border border-gray items-center relative"
+                                href="{{ paginator.next_page_path }}" rel="next">
+                            </a>
+                        </li>
+                        {% else %}
+                        <span
+                            class="next w-16 h-16 rounded-full flex justify-center border border-gray items-center relative text-gray"></span>
+                        {% endif %}
+                        </ul>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,113 @@
+@import "../mixins/gradient-border.scss";
+@import "../mixins/hover-gradient.scss";
+.articles-grid {
+  grid-auto-rows: 1fr;
+}
+
+.post-content {
+  @include hoverGradient;
+  &::before {
+    border-radius: 40px;
+  }
+}
+.article-btn {
+  transition: 0.4s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+.post-content,
+.article-btn {
+  @include graidentBorder(#2b2b2b);
+  border-radius: 40px;
+}
+
+.pagination {
+  .page-active {
+    background: linear-gradient(213.12deg, #abe581 26.52%, #8cdbe2 111.08%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .previous,
+  .next {
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border: 2.8px solid;
+      border-bottom: 0;
+      border-left: 0;
+      border-radius: 1px;
+    }
+  }
+  .previous {
+    transform: rotate(225deg);
+  }
+  .next {
+    transform: rotate(45deg);
+  }
+
+  a {
+    &.next::before,
+    &.previous::before {
+      border-left: none;
+      border-bottom: none;
+    }
+  }
+}
+
+.copy-btn:hover {
+  &:after {
+    display: flex;
+    justify-content: center;
+    background: #444;
+    border-radius: 5px;
+    color: #fff;
+    content: attr(data-before);
+    font-size: 14px;
+    padding: 5px;
+    position: absolute;
+    width: 100px;
+    top: 51px;
+    font-weight: 500;
+  }
+  &:before {
+    border: solid;
+    border-color: #444 transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #444;
+    border-top: 0;
+    content: "";
+    left: 28%;
+    bottom: -15px;
+    position: absolute;
+  }
+}
+.post-container {
+  article:nth-of-type(2) {
+    p:first-child {
+      margin-bottom: 1rem;
+      margin-top: 4rem;
+    }
+    img {
+      width: 100%;
+      max-height: 35rem;
+      object-fit: cover;
+      object-position: center;
+    }
+    p {
+      font-weight: 400;
+      font-size: 1.2rem;
+      line-height: 30px;
+      letter-spacing: 0.02em;
+      margin-top: 1rem;
+
+      @media screen and (max-width: 600px) {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}

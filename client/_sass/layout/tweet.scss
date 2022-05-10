@@ -1,0 +1,6 @@
+@import "../mixins/gradient-border.scss";
+
+.tweet-card {
+  @include graidentBorder(#2b2b2b);
+  max-width: 575px;
+}

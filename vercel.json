@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source":
+      "/api/tweets", 
+      "destination": "/api/tweets" },
+    { "source": "/api/twitter/sustaindao", 
+      "destination": "/api/user" 
+    }
+  ]
+}

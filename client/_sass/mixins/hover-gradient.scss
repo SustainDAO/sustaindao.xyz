@@ -1,0 +1,43 @@
+@mixin hoverGradient {
+    z-index: 0;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: border-color 0.35s ease, background 0.35s ease;
+    transition: border-color 0.35s ease, background 0.35s ease;
+    &:before {
+        background: linear-gradient(213.12deg, #abe581 26.52%, #8cdbe2 111.08%);
+        content: "";
+        display: block;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        -webkit-transition: all 0.6s ease;
+        transition: all 0.6s ease;
+    }
+    &:after {
+        position: absolute;
+        right: 2.34375rem;
+        top: 50%;
+        -webkit-transform: translateY(-50%) translateX(50%);
+        -ms-transform: translateY(-50%) translateX(50%);
+        transform: translateY(-50%) translateX(50%);
+        font-size: 1.75em;
+    }
+    &:hover {
+        border-width: 0px;
+        background-clip: unset;
+        border: none;
+        transition: 0.5s;
+        &::before {
+            top: 0;
+        }
+        a {
+            & > * {
+                color: black !important;
+            }
+        }
+    }
+}

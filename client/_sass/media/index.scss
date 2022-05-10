@@ -1,0 +1,81 @@
+@media screen and (max-width: 1270px) {
+    .mobile {
+        clip-path: inset(0 57% 0 0);
+        width: 235%;
+    }
+    .ps-timeline {
+        margin: 0 !important;
+        height: 38rem;
+        border-top: 0 !important;
+        border-left: 3px solid;
+        border-image-slice: 0 0 0 1 !important;
+        &::after {
+            top: 104% !important;
+            left: 0px;
+        }
+        li {
+            height: 33.3%;
+            position: relative;
+            float: none !important;
+            &:last-child {
+                margin: 0;
+                bottom: 0 !important;
+                height: 120px;
+            }
+            span {
+                left: 22px !important;
+                &:before {
+                    transform: rotate(90deg);
+                }
+                &:after {
+                    top: 13px !important;
+                    right: -50px !important;
+                }
+            }
+            & > div{
+                position: absolute;
+                right: -45px;
+                top: -80px;
+                width: 90%;
+            }
+        }
+        div:last-child{
+            clip-path: polygon(100% 0, 0 0, 50% 77%) !important;
+            top: 100% !important;
+            left: -6px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #roadmap {
+        margin: 1.5rem 11rem 6rem;
+    }
+}
+
+
+@media screen and (max-width: 720px) {
+    .mobile {
+        max-height: 750px;
+    }
+    #roadmap {
+        margin: 0!important;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-bottom: 10rem !important;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    #roadmap {
+        padding: 1rem;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    #roadmap {
+        margin: 6rem 18rem;
+    }
+}
+

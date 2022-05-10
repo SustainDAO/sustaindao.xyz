@@ -1,0 +1,66 @@
+{
+  "name": "gh-pages-jekyll-react",
+  "version": "1.0.0",
+  "description": "Integrate React into jekyll site as described by Alli Zadrozny",
+  "main": "webpack.config.js",
+  "scripts": {
+    "dev": "bundle exec jekyll clean && run-p dev:{webpack,jekyll,css}",
+    "dev:jekyll": "sleep 5 && bundle exec jekyll serve --port 3000 --host=0.0.0.0 --livereload",
+    "dev:webpack": "webpack --mode development --watch",
+    "build": "run-s build:webpack build:jekyll",
+    "build:jekyll": "JEKYLL_ENV=production bundle exec jekyll build",
+    "build:webpack": "webpack --mode production",
+    "dev:css": "postcss _sass/main.scss --output assets/css/style.css --watch",
+    "build:css": "NODE_ENV=production postcss _sass/main.scss --output assets/css/style.css",
+    "flow": "flow",
+    "start": "jekyll serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dellaert/gh-pages-jekyll-react.git"
+  },
+  "keywords": [
+    "jekyll",
+    "webpack",
+    "react"
+  ],
+  "author": "Frank Dellaert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dellaert/gh-pages-jekyll-react/issues"
+  },
+  "homepage": "https://sustaindao-node.vercel.app/",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-flow": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "autoprefixer": "^10.4.4",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^4.3.0",
+    "cssnano": "^5.1.7",
+    "postcss": "^8.4.12",
+    "postcss-cli": "^9.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.3",
+    "tailwindcss": "^3.0.24",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0"
+  },
+  "resolutions": {
+    "react-scripts/webpack-dev-server/selfsigned/node-forge": "^0.10.0"
+  },
+  "dependencies": {
+    "@rive-app/canvas": "^1.0.49",
+    "@rive-app/react-canvas": "^3.0.1",
+    "@tailwindcss/line-clamp": "^0.3.1",
+    "flow-bin": "^0.130.0",
+    "npm-run-all": "^4.1.5",
+    "rive-react": "^3.0.1"
+  }
+}
