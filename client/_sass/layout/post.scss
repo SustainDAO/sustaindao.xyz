@@ -5,9 +5,13 @@
 }
 
 .post-content {
-  @include hoverGradient;
   &::before {
     border-radius: 40px;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .post-content {
+    @include hoverGradient;
   }
 }
 .article-btn {

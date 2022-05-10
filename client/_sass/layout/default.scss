@@ -185,13 +185,3 @@
     @include graidentBorder(#2b2b2b);
   }
 }
-
-.group {
-  transform-box: fill-box !important;
-  transform-origin: center !important;
-}
-
-:not(svg){
-  transform-box: fill-box !important;
-  transform-origin: center !important;
-}

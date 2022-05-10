@@ -127,10 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
             btc.style.marginLeft = '0';
           }
           let union = entry.target.querySelector('.union-animation img');
-          // if(union){
-          //   union.style.animation = 'slide-right 1.5s';
-          //   union.style.marginLeft = '0';
-          // }
           window.addEventListener('scroll', () => {
             let theta = window.scrollY / 3;
             union.style.transform = `rotate(${theta}deg)`
@@ -151,24 +147,11 @@ document.addEventListener("DOMContentLoaded", () => {
       observer.observe(el)
     });
 
-    var obj = document.querySelector(".img-object");
-    obj.addEventListener('load', () => {
-      let svg = obj.contentDocument.querySelector('#svg-anim');
-      if(svg){
-        svg.querySelectorAll('.group').forEach(group => {
-          group.querySelectorAll('path').forEach(p => {
-            p.style.transformOrigin = 'center !important';
-            p.style.transformBox = 'fill-box !important'
-            p.style.transition='0.5s ease !important'
-          })
-        })
-      }
-    })
+    let obj = document.querySelector('.img-object')
     window.onscroll = () => {
       var svg = obj.contentDocument.querySelector("svg");
       let theta = window.scrollY / 4;
-      let groups = svg.querySelectorAll('.group');
-      groups.forEach(group => {
+      svg.querySelectorAll('g').forEach(group => {
         let paths = group.querySelectorAll('path');
         paths.forEach(path => {
           path.style.transformOrigin = 'center';
@@ -179,4 +162,3 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
   });
-  
