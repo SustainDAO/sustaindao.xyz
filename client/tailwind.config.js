@@ -7,7 +7,7 @@ module.exports = {
     './articles/**/*.html',
     './article/**/*.html',
     './*.html',
-    "./src/**/*.{html,js}"
+    "./src/**/*.{html,js,jsx}"
   ],
   darkMode: 'class',
   theme: {
