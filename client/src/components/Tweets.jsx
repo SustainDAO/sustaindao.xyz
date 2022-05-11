@@ -49,18 +49,16 @@ function Tweets() {
               className="tweet-card cursor-pointer w-full sm:w-4/5 tablet:min-w-100 tablet:w-auto bg-black-smoke rounded-xlg flex min-h-24 items-center"
             >
               <div>
-                <div
-                  onClick={(e) => e.stopPropagation()}
-                  className="flex gap-3 p-4 flex-col xsm:flex-row"
-                >
+                <div className="flex gap-3 p-4 flex-col xsm:flex-row">
                   <a target="_blank" href={profileUrl}>
                     <img
+                      onClick={(e) => e.stopPropagation()}
                       className="rounded-full"
                       src={data.profile_image_url}
                       alt="user profile image"
                     />
                   </a>
-                  <div className="details">
+                  <div onClick={(e) => e.stopPropagation()} className="details">
                     <div className="flex gap-2 items-center text-base leading-5">
                       <a
                         target="_blank"

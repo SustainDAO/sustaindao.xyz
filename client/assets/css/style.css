@@ -643,6 +643,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-16 {
   width: 4rem;
 }
+.w-12 {
+  width: 3rem;
+}
+.w-24 {
+  width: 6rem;
+}
+.w-28 {
+  width: 7rem;
+}
 .min-w-51 {
   min-width: 13.75rem;
 }
@@ -732,6 +741,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .gap-3 {
   gap: 0.75rem;
+}
+.gap-0 {
+  gap: 0px;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -1024,6 +1036,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 480px) {
 
+  .xsm\:w-fit {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
   .xsm\:max-w-xmd {
     max-width: 25rem;
   }
@@ -1045,6 +1063,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 @media (min-width: 550px) {
+
+  .xmd\:flex {
+    display: flex;
+  }
+
+  .xmd\:w-fit {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
 
   .xmd\:flex-row {
     flex-direction: row;
@@ -1068,8 +1096,18 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 80%;
   }
 
+  .sm\:w-fit {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
   .sm\:max-w-xsl {
     max-width: 22.5rem;
+  }
+
+  .sm\:gap-0 {
+    gap: 0px;
   }
 
   .sm\:px-0 {
@@ -1328,12 +1366,20 @@ Ensure the default browser behavior of the `hidden` attribute.
     justify-content: center;
   }
 
+  .desktop\:justify-between {
+    justify-content: space-between;
+  }
+
   .desktop\:gap-40 {
     gap: 10rem;
   }
 
   .desktop\:gap-20 {
     gap: 5rem;
+  }
+
+  .desktop\:gap-0 {
+    gap: 0px;
   }
 
   .desktop\:p-10 {
@@ -1419,6 +1465,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 1420px) {
 
+  .screen\:ml-24 {
+    margin-left: 6rem;
+  }
+
   .screen\:block {
     display: block;
   }
@@ -1428,6 +1478,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 
   .screen\:gap-80 {
+    gap: 20rem;
+  }
+}
+@media (min-width: 1536px) {
+
+  .screen-lg\:gap-0 {
+    gap: 0px;
+  }
+
+  .screen-lg\:gap-80 {
     gap: 20rem;
   }
 }
@@ -1457,5 +1517,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .screen-xl\:gap-0 {
     gap: 0px;
+  }
+
+  .screen-xl\:gap-80 {
+    gap: 20rem;
   }
 }

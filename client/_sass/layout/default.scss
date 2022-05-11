@@ -132,12 +132,6 @@
 }
 
 .coin-stats {
-  .wrapper {
-    align-items: self-start;
-    @media screen and (min-width: 1780px) {
-      align-items: center;
-    }
-  }
   .content {
     border-radius: 40px;
     @include graidentBorder(#2b2b2b);
@@ -145,12 +139,6 @@
 }
 
 .community-stats {
-  .wrapper {
-    align-items: self-end;
-    @media screen and (min-width: 1780px) {
-      align-items: center;
-    }
-  }
   .content {
     border-radius: 40px;
     @include graidentBorder(#2b2b2b);
