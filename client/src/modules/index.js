@@ -163,4 +163,9 @@ document.addEventListener("DOMContentLoaded", () => {
         })
       }
     }
+    let readMore = document.querySelector('#read-more');
+    if(readMore){
+      readMore.onclick = () => window.open('https://docs.sustaindao.xyz/', "_blank");
+      readMore.addEventListener('auxclick', () =>window.open('https://docs.sustaindao.xyz/', "_blank") )
+    }
   });

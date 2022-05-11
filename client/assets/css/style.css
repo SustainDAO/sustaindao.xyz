@@ -553,6 +553,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-12 {
   margin-top: 3rem;
 }
+.mt-6 {
+  margin-top: 1.5rem;
+}
 .mb-12 {
   margin-bottom: 3rem;
 }
@@ -564,9 +567,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mt-28 {
   margin-top: 7rem;
-}
-.mt-6 {
-  margin-top: 1.5rem;
 }
 .ml-0 {
   margin-left: 0px;
@@ -642,11 +642,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-16 {
   width: 4rem;
-}
-.w-fit {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 .min-w-51 {
   min-width: 13.75rem;
@@ -1138,6 +1133,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .tablet\:justify-start {
     justify-content: flex-start;
+  }
+
+  .tablet\:justify-end {
+    justify-content: flex-end;
   }
 
   .tablet\:gap-0 {

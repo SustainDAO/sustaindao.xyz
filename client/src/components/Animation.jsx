@@ -3,7 +3,7 @@ import { useRive } from "rive-react";
 const Animation = () => {
   const { rive, RiveComponent } = useRive(
     {
-      src: "../../assets/animations/animation3.riv",
+      src: "../../assets/animations/animation2.riv",
       autoplay: true,
       stateMachines: "Mkhitar_Gosh",
     },
@@ -11,10 +11,6 @@ const Animation = () => {
       fitCanvasToArtboardHeight: true,
     }
   );
-  return (
-    <div className="mt-16">
-      <RiveComponent className="w-fit rive-animation" />
-    </div>
-  );
+  return <RiveComponent className="w-full h-screen rive-animation" />;
 };
 export default Animation;

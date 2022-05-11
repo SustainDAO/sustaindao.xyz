@@ -69,8 +69,8 @@ title: SustainDAO
             </div>
         </div>
     </section> -->
-    <section class="relative z-[1] bg-black-smoke tablet:bg-black-main pt-6" id="main">
-        <div class="mx-auto text-white max-w-xlg px-0 tablet:px-8">
+    <section class="relative z-[1] pt-6 bg-black-smoke tablet:bg-black-main" id="main">
+        <div class="mx-auto   text-white max-w-xlg px-0 tablet:px-8">
             <div class="p-6 tablet:p-10 bg-black-smoke rounded-none tablet:rounded-3xl">
                 <p class="text-lg leading-7 tablet:text-2xl tablet:leading-9">On a mission to make bitcoin the most
                     sustainable asset class on earth and
@@ -196,43 +196,14 @@ title: SustainDAO
                             </div>
                         </div>
                     </div>
-                    <div class="rounded-xlg text-white overflow-hidden border-2 border-gray-light">
-                        <div class="question font-normal text-lg leading-7 gap-4 cursor-pointer flex justify-between">
-                            Is governance ownership?
-                        </div>
-                        <div class="max-h-0 overflow-hidden bg-black-smoke relative text-white duration-300">
-                            <div class="relative leading-6 px-4 pb-4 pt-2 answer">
-                                <p>
-                                    DAO members receive a governance tokens, not fractionalized ownership. Governance
-                                    includes the ability to advise on the mission, values, and operations of SustainDAO
-                                    as well as the allocation of resources to projects that the DAO supports. SustainDAO
-                                    is taking donations and donors are receiving governance tokens with no expectation
-                                    of profit. These donations are not tax deductible at this time.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded-xlg text-white overflow-hidden border-2 border-gray-light">
-                        <div class="question font-normal text-lg leading-7 gap-4 cursor-pointer flex justify-between">
-                            Why a 15% reserve on the token?
-                        </div>
-                        <div class="max-h-0 overflow-hidden bg-black-smoke relative text-white duration-300">
-                            <div class="relative leading-6 px-4 pb-4 pt-2 answer">
-                                <p>
-                                    The 15% reserve will be governed by the $SSTN holders and can be used to pay
-                                    contributors and/or be burned based on votes from $SSTN holders. The reserve will
-                                    not be dumped on secondary markets and/or dilute anyone without the consent of the
-                                    $SSTN holders. $SSTN holders will vote to the benefit of the DAO’s interests that
-                                    promotes the mission and values of SustainDAO. This offers more protection to $SSTN
-                                    holders than letting the DAO potentiallydeflate the holders by minting more $SSTN
-                                    with no supply cap. Rather, we wanted to set a supply limit and leave the DAO with
-                                    some portion to distribute for work done for the DAO.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
+        </div>
+        <div class="flex justify-center tablet:justify-end mx-auto max-w-xlg px-0 tablet:px-8 bg-black-main">
+            <button id="read-more"
+                class="border-0 outline-0 mt-6 relative overflow-hidden cursor-pointer font-display-bold text-black-smoke text-xl tablet:text-2xl leading-6 py-3 px-10 tablet:py-5 tablet:px-14 rounded-2xl">
+                Read more
+            </button>
         </div>
 
     </section>
@@ -327,7 +298,8 @@ title: SustainDAO
         <div class="flex justify-center px-5 tablet:px-10 desktop:px-24 py-16 flex-col">
             <div class="flex gap-12 flex-col desktop:flex-row justify-center">
                 {% for post in site.posts limit:3 %}
-                <div class="post-content w-full desktop:w-1/3 flex items-center desktop:min-h-90 max-h-64 justify-center">
+                <div
+                    class="post-content w-full desktop:w-1/3 flex items-center desktop:min-h-90 max-h-64 justify-center">
                     <a href="{{post.url}}">
                         <div class="p-6 desktop:p-10 text-white">
                             <p
