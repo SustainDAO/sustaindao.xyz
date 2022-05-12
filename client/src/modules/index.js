@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let obj = document.querySelector('.img-object')
     window.onscroll = () => {
-      if(obj){
+      if(obj && obj.contentDocument){
         let svg = obj.contentDocument.querySelector("svg");
         let theta = window.scrollY / 4;     
           svg.querySelectorAll('g').forEach(group => {

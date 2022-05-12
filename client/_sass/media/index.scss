@@ -1,8 +1,4 @@
 @media screen and (max-width: 1270px) {
-    .mobile {
-        clip-path: inset(0 57% 0 0);
-        width: 235%;
-    }
     .ps-timeline {
         margin: 0 !important;
         height: 38rem;
@@ -65,6 +61,18 @@
 @media screen and (max-width: 840px) {
     .mobile {
         max-height: 750px;
+    }
+}
+@media screen and (max-width:720px){
+    .mobile{
+        max-height: 500px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .mobile {
+        clip-path: inset(0 57% 0 0);
+        width: 235%;
     }
 }
 

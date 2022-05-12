@@ -95,7 +95,7 @@ module.exports = {
       'xmd':'550px',
       'sm': '640px',
       'tablet': '720px',
-      'xmd':'750px',
+      'lmd':'750px',
       'md':'840px',
       'laptop': '1024px',
       'desktop': '1270px',
