@@ -29,13 +29,15 @@ window.addEventListener('DOMContentLoaded', () => {
       })
     });
     let article = document.querySelector('article.content');
-    const children = Array.from(article.children);
-    children.forEach(el => {
-      if(el.querySelectorAll('img').length > 0){
-       return el.classList.add('max-w-4xl')
-      }
-      el.classList.add('max-w-2xl')
-    })
+    if(article){
+      const children = Array.from(article.children);
+      children.forEach(el => {
+        if(el.querySelectorAll('img').length > 0){
+         return el.classList.add('max-w-4xl')
+        }
+        el.classList.add('max-w-2xl')
+      })
+    }
     let postUrl = encodeURI(document.location.href);
     let postTitle = encodeURI("Hi everyone, please check this out: ");
     const facebookBtn = document.querySelectorAll(".facebook-btn");
