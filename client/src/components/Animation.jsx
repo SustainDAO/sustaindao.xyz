@@ -3,7 +3,7 @@ import { useRive } from "rive-react";
 const Animation = () => {
   const { rive, RiveComponent } = useRive(
     {
-      src: "../../assets/animations/animation2.riv",
+      src: "../../assets/animations/animation.riv",
       autoplay: true,
       stateMachines: "Mkhitar_Gosh",
     },
