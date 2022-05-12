@@ -1352,6 +1352,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-top: 4rem;
   }
 
+  .md\:mt-48 {
+    margin-top: 12rem;
+  }
+
   .md\:h-\[42rem\] {
     height: 42rem;
   }
