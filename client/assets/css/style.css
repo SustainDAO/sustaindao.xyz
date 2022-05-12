@@ -1083,9 +1083,18 @@ Ensure the default browser behavior of the `hidden` attribute.
     justify-content: flex-end;
   }
 
+  .xmd\:gap-0 {
+    gap: 0px;
+  }
+
   .xmd\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .xmd\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 @media (min-width: 640px) {
@@ -1181,6 +1190,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-top: 5rem;
   }
 
+  .tablet\:mt-52 {
+    margin-top: 13rem;
+  }
+
+  .tablet\:mt-48 {
+    margin-top: 12rem;
+  }
+
   .tablet\:w-auto {
     width: auto;
   }
@@ -1258,6 +1275,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   .tablet\:py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
+  }
+
+  .tablet\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .tablet\:pt-5 {
